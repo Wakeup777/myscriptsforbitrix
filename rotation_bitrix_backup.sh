@@ -9,4 +9,3 @@ find ${Path2}  -type f -mtime + ${RDate} -exec rm -rf {} \;
 ls -la ${Path2}>> ${Path1}
 echo '############################'>> ${Path1}
 echo '           '>> ${Path1}
-root@map /h/b/backup# 

@@ -3,11 +3,11 @@ echo "###############################################" | tee -a  /home/bitrix/ba
 echo -n  "-- Start dumping "|tee -a  /home/bitrix/backup/backup.log
 date | tee -a /home/bitrix/backup/backup.log
 
-mysqldump --insert-ignore --skip-lock-tables --single-transaction=TRUE dbmasterbel > /home/bitrix/backup/masterbel.sql
+mysqldump --insert-ignore --skip-lock-tables --single-transaction=TRUE dbNAME > /home/bitrix/backup/dbNAME.sql
 
-tail -n1 /home/bitrix/backup/masterbel.sql | tee -a /home/bitrix/backup/backup.log
+tail -n1 /home/bitrix/backup/dbNAME.sql | tee -a /home/bitrix/backup/backup.log
 
-gzip masterbel.sql
+gzip dbNAME.sql
 
-gzip --list  masterbel.sql.gz | tee -a /home/bitrix/backup/backup.log
-file masterbel.sql.gz         | tee -a /home/bitrix/backup/backup.log
+gzip --list  dbNAME.sql.gz | tee -a /home/bitrix/backup/backup.log
+file dbNAME.sql.gz         | tee -a /home/bitrix/backup/backup.log

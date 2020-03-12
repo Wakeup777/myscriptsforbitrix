@@ -1,7 +1,7 @@
 #!/bin/bash
 
 Path1="/home/bitrix/backup/"
-dbname="masterbel"
+dbname="dbname"
 dat=$(date +%Y-%m-%d_%H)
 
 
@@ -12,7 +12,7 @@ echo -n  "-- Start dumping "               | tee -a  ${Path1}backup.log
 
 date                                       | tee -a ${Path1}backup.log
 
-mysqldump --insert-ignore --skip-lock-tables --single-transaction=TRUE dbmasterbel > ${Path1}${dbname}${dat}.sql
+mysqldump --insert-ignore --skip-lock-tables --single-transaction=TRUE ${dbname}> ${Path1}${dbname}${dat}.sql
 
 tail -n1     ${Path1}${dbname}${dat}.sql   | tee -a  ${Path1}backup.log
 
