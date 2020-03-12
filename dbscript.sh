@@ -1,5 +1,5 @@
 #! /bin/bash
-cat dbconn.php  |
+cat bitrix/php_interface/dbconn.php  |
      awk '{
              if ($1=="$DBLogin") DBLogin=$3;
              else if ($1=="$DBPassword") DBPassword =$3;
