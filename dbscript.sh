@@ -63,3 +63,7 @@ cat bitrix/php_interface/dbconn.php  |
     sed 's/\;//g' | sh
 
 tail -n1 *.sql
+
+
+#new sed 
+# sed -re 's/(\;|\")//g'
